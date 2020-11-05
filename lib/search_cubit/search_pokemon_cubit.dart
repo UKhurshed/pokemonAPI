@@ -36,4 +36,8 @@ class SearchPokemonCubit extends Cubit<SearchPokemonState> {
       emit(SearchPokemonError(error));
     }
   }
+
+  Future<void> refreshState() async{
+    emit(SearchPokemonInitial());
+  }
 }

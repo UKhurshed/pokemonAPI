@@ -6,9 +6,13 @@ import 'package:pokemon/search_cubit/search_pokemon_cubit.dart';
 import 'package:pokemon/widgets/loading_widget.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-class SearchPokemonScreen extends StatelessWidget {
+class SearchPokemonScreen extends StatefulWidget {
   const SearchPokemonScreen({Key key}) : super(key: key);
+  @override
+  _SearchPokemonScreenState createState() => _SearchPokemonScreenState();
+}
 
+class _SearchPokemonScreenState extends State<SearchPokemonScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -160,6 +164,13 @@ class SearchPokemonScreen extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  @override
+  void initState() {
+    final searchPokemonCubit = context.bloc<SearchPokemonCubit>();
+    searchPokemonCubit.refreshState();
+    super.initState();
   }
 }
 

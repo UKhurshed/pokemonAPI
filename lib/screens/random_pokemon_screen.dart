@@ -153,8 +153,8 @@ class _RandomPokemonScreenState extends State<RandomPokemonScreen> {
 
   @override
   void initState() {
-    final searchPokemonCubit = context.bloc<SearchPokemonCubit>();
-    searchPokemonCubit.randomPokemon();
+    final randomPokemonCubit = context.bloc<SearchPokemonCubit>();
+    randomPokemonCubit.randomPokemon();
     super.initState();
   }
 }
@@ -174,7 +174,7 @@ class Button extends StatelessWidget {
   }
 
   void submitPokemonName(BuildContext context) {
-    final searchPokemonCubit = context.bloc<SearchPokemonCubit>();
-    searchPokemonCubit.randomPokemon();
+    final randomPokemonCubit = context.bloc<SearchPokemonCubit>();
+    randomPokemonCubit.randomPokemon();
   }
 }
